@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
+/* Base colors (warm, grounded) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f1ea;
+  --foreground: #1a1a1a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Remove dark mode completely for now */
+/* (we can add it back later intentionally) */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Optional: smoother text rendering */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Layout system */
+
+/* Main content container */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section spacing */
+.section {
+  padding: 80px 0;
+  border-top: 1px solid #e0ddd7;
+}
+
+/* Hero (no border) */
+.hero {
+  padding: 120px 0 100px;
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Slightly softer text */
+.text-muted {
+  color: #555;
+}
+
+/* Vertical rhythm for grouped text */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+
+
+
+/* Contact form */
+
+.contact-form {
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: 1px solid #333;
+  background: #333;
+  color: white;
+  cursor: pointer;
 }

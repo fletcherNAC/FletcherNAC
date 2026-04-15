@@ -6,9 +6,6 @@ export default function Contact() {
       <div className="container">
         <h2>Get Connected</h2>
 
-        <p className="text-muted">
-          Text here?
-        </p>
 
         <form className="contact-form">
 

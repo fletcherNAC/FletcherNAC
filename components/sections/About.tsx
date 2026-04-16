@@ -13,10 +13,10 @@ export default function About() {
           </p>
 
           <p>
-            Rooted in shared values and lived experience, our space brings people 
-            together in a way that feels natural and real—not forced or transactional. 
-            We focus on creating an environment where trust can grow over time, 
-            relationships can form, and people feel comfortable showing up as they are.
+            Rooted in shared values and lived experience, this space brings people 
+            together in a way that feels natural and consistent. We focus on creating 
+            an environment where trust can grow over time, relationships can form, and 
+            people feel comfortable showing up as they are.
           </p>
             
           <p>

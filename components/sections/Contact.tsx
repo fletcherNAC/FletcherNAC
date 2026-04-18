@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -9,7 +10,6 @@ export default function Contact() {
     message: "",
   });
 
-  const [status, setStatus] = useState("");
 
   const handleChange = (e: any) => {
     setForm({
@@ -18,29 +18,33 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    setStatus("Sending...");
+const handleSubmit = async (e: any) => {
+  e.preventDefault();
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+  const loadingToast = toast.loading("Sending message...");
 
-      if (res.ok) {
-        setStatus("Message sent");
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Something went wrong");
-      }
-    } catch (err) {
-      setStatus("Error sending message");
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    toast.dismiss(loadingToast);
+
+    if (res.ok) {
+      toast.success("Thank you for reaching out. Someone will connect with you soon.");
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      toast.error("Something went wrong. Please try again.");
     }
-  };
+  } catch (err) {
+    toast.dismiss(loadingToast);
+    toast.error("Error sending message.");
+  }
+};
 
   return (
     <section id="contact" className="section">
@@ -88,8 +92,6 @@ export default function Contact() {
             Send Message
           </button>
         </form>
-
-        {status && <p style={{ marginTop: "10px" }}>{status}</p>}
 
         <p style={{ marginTop: "20px" }}>
           Or email: contact@fletchernac.com

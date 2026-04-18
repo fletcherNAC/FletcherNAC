@@ -1,10 +1,10 @@
 export default function Header() {
   return (
 <header className="w-full border-b">
-  <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+  <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
 
-    <h1 className="text-2xl sm:text-4xl font-bold leading-tight">
-      Fletcher NAC
+    <h1 className="text-xl sm:text-3xl font-bold leading-tight">
+      Fletcher <br /> NAC
     </h1>
 
     <nav className="flex gap-4 text-sm sm:text-base">

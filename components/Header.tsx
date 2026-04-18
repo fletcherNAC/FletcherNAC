@@ -1,19 +1,19 @@
 export default function Header() {
   return (
-    <header className="w-full border-b border-[#e0ddd7] bg-[#f4f1ea]">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        <h1 className="text-sm font-semibold text-[#1a1a1a]">
-          Fletcher NAC
-        </h1>
+<header className="w-full border-b">
+  <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 
-        <nav className="flex gap-6 text-sm text-[#3a3a3a]">
-          <a href="#about" className="hover:text-black">About</a>
-          <a href="#experience" className="hover:text-black">Experience</a>
-          <a href="#contact" className="hover:text-black">Contact</a>
-        </nav>
+    <h1 className="text-2xl sm:text-4xl font-bold leading-tight">
+      Fletcher NAC
+    </h1>
 
-      </div>
-    </header>
+    <nav className="flex gap-4 text-sm sm:text-base">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
   );
 }
